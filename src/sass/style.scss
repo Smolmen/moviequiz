@@ -1,0 +1,198 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+@import "palette";
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: $color1;
+    padding: 0;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 50px;
+    background: $color3;
+    position: relative;
+    transition: background 0.1s;
+
+    span {
+        position: absolute;
+        width: 100%;
+        text-align: center;
+        padding: 1rem;
+    }
+
+    .progress {
+        height: 50px;
+        background: rgba(0,0,0,0.2);
+        transition: width 0.2s;
+    }
+
+    &.correct {
+        background-color: #8BC34A;
+    }
+    &.incorrect {
+        background-color: $color2;
+    }
+}
+
+.question {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 0 0.5rem;
+
+    .gif {
+        text-align: center;
+        margin-bottom: 2rem;
+
+        img {
+            max-width: 100%;
+        }
+    }
+
+    .answers {
+        background-color: $color5;
+        border-radius: 5px;
+        width: 100%;
+
+        .answer {
+            padding: 1rem;
+            border-bottom: 1px solid rgba(0,0,0,0.2);
+            cursor: pointer;
+            transition: all 0.2s;
+
+            &:last-child {
+                border-bottom: none;
+            }
+
+            &.selected {
+                background-color: rgba(0,0,0,0.2);
+                font-size: 14pt;
+            }
+
+            &:hover {
+                background-color: rgba(0,0,0,0.2);
+            }
+
+            &.true {
+                background-color: rgba(0,0,0,0.2);
+            }
+
+            &.false {
+                background-color: $color2;
+            }
+        }
+    }
+
+    .button.next {
+        width: 100%;
+        text-align: center;
+        background-color: $color5;
+        padding: 1rem;
+        margin-top: 1rem;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: all 0.1s;
+
+        &.correct {
+            background-color: #8BC34A;
+        }
+        &.incorrect {
+            background-color: $color2;
+        }
+    }
+}
+
+.endscreen {
+    max-width: 900px;
+    margin: 2rem auto;
+
+
+    .score {
+        text-align:center;
+        font-size: 16pt;
+        color: white;
+    }
+
+    .stat {
+
+        margin-top: 2rem;
+
+        .stat-item {
+            background: $color5;
+            padding: 1rem;
+            border-radius: 5px;
+            margin-top: 1rem;
+
+            &.correct {
+                background: #8BC34A;
+            }
+            &.incorrect {
+                background: $color2;
+            }
+
+            .small {
+                font-size: 10pt;
+                color: rgba(0,0,0,0.5);
+            }
+        }
+    }
+
+    .tryagain {
+        width: 100%;
+        text-align: center;
+        background-color: $color5;
+        padding: 1rem;
+        margin-top: 1rem;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: all 0.1s;
+    }
+}
+
+.spinner {
+    width: 40px;
+    height: 40px;
+  
+    position: relative;
+    margin: 100px auto;
+  }
+  
+  .double-bounce1, .double-bounce2 {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: #333;
+    opacity: 0.6;
+    position: absolute;
+    top: 0;
+    left: 0;
+    
+    -webkit-animation: sk-bounce 2.0s infinite ease-in-out;
+    animation: sk-bounce 2.0s infinite ease-in-out;
+  }
+  
+  .double-bounce2 {
+    -webkit-animation-delay: -1.0s;
+    animation-delay: -1.0s;
+  }
+  
+  @-webkit-keyframes sk-bounce {
+    0%, 100% { -webkit-transform: scale(0.0) }
+    50% { -webkit-transform: scale(1.0) }
+  }
+  
+  @keyframes sk-bounce {
+    0%, 100% { 
+      transform: scale(0.0);
+      -webkit-transform: scale(0.0);
+    } 50% { 
+      transform: scale(1.0);
+      -webkit-transform: scale(1.0);
+    }
+  }
